@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center>
+      <label>Name:</label>
+      <input type="text" required id="i1" />
+      <span id="it1" style="color: green; margin-left: 10px"></span>
+      <br />
+      <br />
+      <label>Email:</label>
+      <input type="email" required id="i2" />
+      <span id="it2" style="color: green; margin-left: 10px"></span>
+      <br />
+      <br />
+      <label>Website:</label>
+      <input type="url" required id="i3" />
+      <span id="it3" style="color: green; margin-left: 10px"></span>
+      <br />
+      <br />
+      <label>Message:</label>
+      <input type="text" size="30px" style="padding-bottom: 50px" id="i4" />
+      <span id="it4" style="color: green; margin-left: 10px"></span>
+      <br />
+      <br />
+      <button type="button" onclick="myFunction()">Submit</button>
+    </center>
+    <script>
+      function myFunction() {
+        let a1 = document.getElementById("i1");
+        let text1;
+        if (isNaN(a1)) {
+          text1 = "This field is required";
+        }
+        document.getElementById("it1").innerHTML = text1;
+        let a2 = document.getElementById("i2");
+        let text2;
+        if (isNaN(a2)) {
+          text2 = "This field is required";
+        }
+        document.getElementById("it2").innerHTML = text2;
+        let a3 = document.getElementById("i3");
+        let text3;
+        if (isNaN(a3)) {
+          text3 = "This field is required";
+        }
+        document.getElementById("it3").innerHTML = text3;
+        let a4 = document.getElementById("i4");
+        let text4;
+        if (isNaN(a4)) {
+          text4 = "This field is required";
+        }
+        document.getElementById("it4").innerHTML = text4;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      tr,
+      td,
+      table {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body
+    align="center""
+  >
+    <table align="center" style="border-collapse: collapse;border: solid; border-radius: 1px; border-color: black; background: linear-gradient(blue,yellow,green);">
+      <tr>
+        <td colspan="2"><h1>Registration Form</h1></td>
+      </tr>
+      <tr>
+        <td>First Name</td>
+        <td>
+          <input onkeyup="strength1()" type="text" size="62px" id="name1" />
+          <span id="n"></span>
+        </td>
+      </tr>
+      <tr>
+        <td>last Name</td>
+        <td>
+          <input onkeyup="strength2()" type="text" size="62px" id="name2" />
+          <span id="ln"></span>
+        </td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td>
+          <input type="email" size="62px" onkeyup="estre()" id="ems" />
+          <span id="emsrt"></span>
+        </td>
+      </tr>
+      <tr>
+        <td>Password:</td>
+        <td>
+          <input type="password" size="62px" onkeyup="pcheck()" id="ps" />
+          <span id="ps1"></span>
+        </td>
+      </tr>
+      <tr>
+        <td>Re Enter Password:</td>
+        <td>
+          <input type="password" size="62px" id="rep" />
+          <span id="psc"></span>
+        </td>
+      </tr>
+      <tr>
+        <td rowspace="2">Gender:</td>
+        <td>
+          <input type="radio" id="g" />Male<br />
+          <input type="radio" id="g" />Female
+        </td>
+      </tr>
+      <tr>
+        <td>Age:</td>
+        <td>
+          <input type="text" size="62px" onkeyup="strengt2()" id="age1" />
+          <span id="a"></span>
+        </td>
+      </tr>
+      <tr>
+        <td>Phone:</td>
+        <td>
+          <input type="text" size="62px" id="ph" onkeyup="phone()" />
+          <span id="ph1"></span>
+        </td>
+      </tr>
+      <tr>
+        <td>Address:</td>
+        <td>
+          <input type="text" size="62px" id="ad" onkeyup="add()" />
+          <span id="ad1"></span>
+        </td>
+      </tr>
+      <tr>
+        <td>State:</td>
+        <td>
+          <input type="text" size="62px" id="st" onkeyup="state()" />
+          <span id="st1"></span>
+        </td>
+      </tr>
+      <tr>
+        <td>Country:</td>
+        <td>
+          <select>
+            <option value="Default">Choose your country</option>
+            <option>India</option>
+            <option>USA</option>
+            <option>UK</option>
+            <option>Australia</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Languages Known</td>
+        <td>
+          <label for="e">English</label>
+          <input type="checkbox" id="e" />
+          <label for="h">Hindi</label>
+          <input type="checkbox" id="h" />
+          <label for="k">Kanada</label>
+          <input type="checkbox" id="k" />
+          <label for="ta">Tamil</label>
+          <input type="checkbox" id="ta" />
+          <label for="te">Telugu</label>
+          <input type="checkbox" id="te" />
+          <label for="ma">Malayalam</label>
+          <input type="checkbox" id="ma" />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input type="checkbox" />Hereby I declare all are true
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          For more information please click
+          <a href="https://en.wikipedia.org/wiki/Robotics" target="_blank"
+            >here</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input type="button" value="Please click here after completition" />
+        </td>
+      </tr>
+    </table>
+
+    <script>
+      function strength1() {
+        var name = document.getElementById("name1").value;
+        if (name.length == 0) {
+          document.getElementById("n").innerHTML = "POOR";
+        } else {
+          document.getElementById("n").innerHTML = "GOOD";
+        }
+      }
+      function strength2() {
+        var name = document.getElementById("name2").value;
+        if (name.length == 0) {
+          document.getElementById("ln").innerHTML = "POOR";
+        } else {
+          document.getElementById("ln").innerHTML = "GOOD";
+        }
+      }
+      function estre() {
+        var name = document.getElementById("ems").value;
+        if (name.length == 0) {
+          document.getElementById("emsrt").innerHTML = "POOR";
+        } else if (name.length < 7) {
+          document.getElementById("emsrt").innerHTML = "AVERAGE";
+        } else {
+          document.getElementById("emsrt").innerHTML = "GOOD";
+        }
+      }
+      function pcheck() {
+        var pascheck1 = document.getElementById("ps").value;
+        if (pascheck1.length == 0) {
+          document.getElementById("ps1").innerHTML = "POOR";
+        } else if (pascheck1.length < 7) {
+          document.getElementById("ps1").innerHTML = "AVERAGE";
+        } else {
+          document.getElementById("ps1").innerHTML = "GOOD";
+        }
+        var pascheck2 = document.getElementById("rep").value;
+        if (pascheck2.length == 0 && pascheck1 != pascheck2) {
+          document.getElementById("psc").innerHTML = "POOR OR NOT MATCHING";
+        } else if (pascheck2.length < 7 && pascheck1 != pascheck2) {
+          document.getElementById("psc").innerHTML = "AVERAGE BUT NOT MATCHING";
+        } else if (pascheck2.length >= 7 && pascheck1 != pascheck2) {
+          document.getElementById("psc").innerHTML = "GOOD BUT NOT MATCHING";
+        } else if (pascheck1 == pascheck2) {
+          document.getElementById("psc").innerHTML = "PASSWORD IS MATCHING";
+        }
+      }
+      function strengt2() {
+        var age = document.getElementById("age1").value;
+        if (age.length == 0) {
+          document.getElementById("a").innerHTML = "POOR";
+        } else {
+          document.getElementById("a").innerHTML = "GOOD";
+        }
+      }
+      function phone() {
+        var pha = document.getElementById("ph").value;
+        if (age.length < 10) {
+          document.getElementById("ph1").innerHTML = "POOR";
+        } else {
+          document.getElementById("ph1").innerHTML = "GOOD";
+        }
+      }
+      function add() {
+        var add = document.getElementById("ad").value;
+        if (add.length < 10) {
+          document.getElementById("ad1").innerHTML = "POOR";
+        } else {
+          document.getElementById("ad1").innerHTML = "GOOD";
+        }
+      }
+      function state() {
+        var sta = document.getElementById("st").value;
+        if (sta.length == 0) {
+          document.getElementById("st1").innerHTML = "POOR";
+        } else {
+          document.getElementById("st1").innerHTML = "GOOD";
+        }
+      }
+    </script>
+  </body>
+</html>

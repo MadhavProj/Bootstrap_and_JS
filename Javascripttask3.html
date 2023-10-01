@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label>1st Number:</label>
+    <input type="text" size="50px" id="1numb" />
+    <br />
+    <label style="margin-top: 10px">2nd Number:</label>
+    <input type="text" size="50px" style="margin-top: 10px" id="2numb" />
+    <br />
+    <br />
+    <button onclick="mul()" value="Multiply">Multiply</button>
+    <button onclick="div()" value="Division">Divide</button>
+    <p>
+      The result of the given numbers according to the buttons clicked=<br />
+      <span id="result"></span>
+    </p>
+    <script>
+      function mul() {
+        num1 = document.getElementById("1numb").value;
+        num2 = document.getElementById("2numb").value;
+        document.getElementById("result").innerHTML = num1 * num2;
+      }
+      function div() {
+        num1 = document.getElementById("1numb").value;
+        num2 = document.getElementById("2numb").value;
+        document.getElementById("result").innerHTML = num1 / num2;
+      }
+    </script>
+  </body>
+</html>

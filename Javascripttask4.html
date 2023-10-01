@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="date()">Show Date</button>
+    <p id="demod"></p>
+    <button onclick="time()">Show Time</button>
+    <p id="demo"></p>
+    <script>
+      function time() {
+        const d = new Date();
+        document.getElementById("demo").innerHTML = d;
+      }
+      function date() {
+        let dateObj = new Date();
+        let month = dateObj.getUTCMonth() + 1; //months from 1-12
+        let day = dateObj.getUTCDate();
+        let year = dateObj.getUTCFullYear();
+        const monthName = dateObj.toLocaleString("default", {
+          month: "long",
+        });
+        newdate = day + "/" + monthName + "/" + year;
+        document.getElementById("demod").innerHTML = newdate;
+      }
+    </script>
+  </body>
+</html>

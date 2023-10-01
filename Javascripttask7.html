@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Animation Control</title>
+    <style>
+      #container {
+        width: 400px;
+        height: 200px;
+        position: relative;
+        overflow: hidden;
+      }
+      #image {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 50px;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <img id="image" src="train.jpg" alt="Moving Picture" />
+    </div>
+    <button id="startBtn">Start</button>
+    <button id="stopBtn">Stop</button>
+
+    <script>
+      const container = document.getElementById("container");
+      const image = document.getElementById("image");
+      const startBtn = document.getElementById("startBtn");
+      const stopBtn = document.getElementById("stopBtn");
+      let animationInterval;
+
+      startBtn.addEventListener("click", startAnimation);
+      stopBtn.addEventListener("click", stopAnimation);
+
+      function startAnimation() {
+        image.style.left = "0";
+        let position = 0;
+        const containerWidth = container.offsetWidth - image.offsetWidth;
+        const step = 2;
+        animationInterval = setInterval(function () {
+          if (position < containerWidth) {
+            position += step;
+            image.style.left = position + "px";
+          } else {
+            clearInterval(animationInterval);
+          }
+        }, 10);
+      }
+
+      function stopAnimation() {
+        clearInterval(animationInterval);
+      }
+    </script>
+  </body>
+</html>

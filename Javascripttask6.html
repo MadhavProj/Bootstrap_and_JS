@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      tr,
+      td,
+      table {
+        justify-content: center;
+      }
+      td {
+        padding-bottom: 20px;
+      }
+      form {
+        margin-left: 550px;
+      }
+      table {
+        border: 2px;
+        border-style: outset;
+        border-color: black;
+        padding: 30px;
+      }
+    </style>
+  </head>
+  <body align="center">
+    <form style="display: flex">
+      <table style="background-color: rgb(235, 246, 247)">
+        <tr>
+          <td colspan="2">
+            <h1 style="font-family: cursive; font-style: italic">Instagram</h1>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input
+              type="text"
+              id="u1"
+              placeholder="Username"
+              size="15px"
+              style="font-size: 30px"
+              id="i1"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input
+              type="pwd"
+              id="u1"
+              placeholder="Password"
+              size="15px"
+              style="font-size: 30px"
+              id="i2"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <button
+              type="submit"
+              onclick="myfunc()"
+              style="
+                background-color: blue;
+                color: white;
+                width: 300px;
+                font-size: 20px;
+                padding: 10px;
+                border-color: blue;
+                border-radius: 5px;
+              "
+            >
+              Log In
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" />
+            Remember Me
+          </td>
+          <td>
+            <a href="#" style="text-decoration: none">Forgot Password?</a>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <div style="margin-right: 30px; margin-top: 20px">
+      Dont have an account!!!<a href="#" style="text-decoration: none"
+        >Sign up here</a
+      >
+    </div>
+    <script>
+      function myfunc() {
+        let x = document.getElementById("i1");
+        if (isNan(x)) {
+          alert("Either name or/and password not filled out");
+          false;
+        }
+        let y = document.getElementById("i2");
+        if (isNan(y)) {
+          alert("Either name or/and password not filled out");
+          false;
+        }
+      }
+    </script>
+  </body>
+</html>
